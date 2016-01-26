@@ -1,2 +1,4 @@
-# cam-website
-C@M Online Application Project
+cam-website
+===========
+
+Canada at Midnight website project

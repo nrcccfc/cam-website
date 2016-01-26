@@ -1,0 +1,1063 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Ann",
+				"anouncments"
+			],
+			[
+				"Wid",
+				"WidgetRegistry"
+			],
+			[
+				"Children",
+				"Children"
+			],
+			[
+				"user",
+				"usedRoleIds"
+			],
+			[
+				"Prestige",
+				"PrestigeCategory"
+			],
+			[
+				"R",
+				"Resources"
+			],
+			[
+				"class",
+				"class_exists"
+			],
+			[
+				"continuities",
+				"continuities"
+			],
+			[
+				"new",
+				"newEntity"
+			],
+			[
+				"domain",
+				"domain_type"
+			],
+			[
+				"player",
+				"player"
+			],
+			[
+				"domainT",
+				"domain_type_id"
+			],
+			[
+				"result",
+				"result"
+			],
+			[
+				"domainType",
+				"DomainType"
+			],
+			[
+				"roles",
+				"roles"
+			],
+			[
+				"assignment",
+				"assignment"
+			],
+			[
+				"is_",
+				"is_logged_in"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"logout",
+				"logoutLink"
+			],
+			[
+				"with",
+				"withErrors"
+			],
+			[
+				"str_r",
+				"str_random"
+			],
+			[
+				"Account",
+				"AccountController"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/Template/Element/layout_head.ctp",
+			"settings":
+			{
+				"buffer_size": 3554,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "	<div class=\"container\">\n\n\n\n		<!-- .btn-navbar is used as the toggle for collapsed navbar content -->\n		<button class=\"navbar-toggle\" data-target=\".navbar-responsive-collapse\" data-toggle=\"collapse\" type=\"button\">\n			<span class=\"icon-bar\"></span>\n			<span class=\"icon-bar\"></span>\n			<span class=\"icon-bar\"></span>\n		</button>\n\n\n\n		<div class=\"navbar-header\">\n			<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-ex1-collapse\">\n			    <span class=\"sr-only\">Toggle navigation</span>\n			    <span class=\"icon-bar\"></span>\n			    <span class=\"icon-bar\"></span>\n			    <span class=\"icon-bar\"></span>\n			</button>\n			<?= $this->Html->link(\n	    		$this->Html->image('logo.png', ['alt' => $cakeDescription, 'border' => '0']), \n	    			'/', \n	    			['class'=>'navbar-brand', 'escape' => false]\n	        	)\n	    	?>\n		</div>\n\n		<div class=\"collapse navbar-collapse navbar-ex1-collapse\">\n			<ul class=\"nav navbar-nav pull-left\">\n				<li class=\"active\"><?= $this->Html->link('Home', '/') ?></li>\n\n				<li><a href=\"#\">Services</a></li>\n			</ul>\n\n			<form class=\"navbar-form pull-left\">\n				<input type=\"text\" class=\"form-control\" placeholder=\"Search this site...\" id=\"searchInput\">\n				<button type=\"submit\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-search\"></span></button>\n			</form><!-- end navbar-form -->\n\n		</div><!-- end  navCollapse -->\n\n\n\n\n	</div> <!-- end container -->",
+			"settings":
+			{
+				"buffer_size": 1423,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Template/Pages/home.ctp",
+			"settings":
+			{
+				"buffer_size": 2839,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Controller/PagesController.php",
+			"settings":
+			{
+				"buffer_size": 1482,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Controller/GamesController.php",
+			"settings":
+			{
+				"buffer_size": 2657,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n\n<html>\n	<head>\n		\n		<!-- Website Title & Description for Search Engine purposes -->\n		<title>Code a Responsive Website with Twitter Bootstrap 3</title>\n		<meta name=\"description\" content=\"Learn how to code your first responsive website with the new Twitter Bootstrap 3.\">\n		\n		<!-- Mobile viewport optimized -->\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n		\n		<!-- Bootstrap CSS -->\n		<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">\n		<link href=\"includes/css/bootstrap-glyphicons.css\" rel=\"stylesheet\">\n		\n		<!-- Custom CSS -->\n		<link rel=\"stylesheet\" href=\"includes/css/styles.css\">\n		\n		<!-- Include Modernizr in the head, before any other Javascript -->\n		<script src=\"includes/js/modernizr-2.6.2.min.js\"></script>\n		\n	</head>\n	<body>\n	\n		<div class=\"container\" id=\"main\">\n		\n			<div class=\"navbar navbar-fixed-top\">\n				<div class=\"container\">\n					\n					<!-- .btn-navbar is used as the toggle for collapsed navbar content -->\n					<button class=\"navbar-toggle\" data-target=\".navbar-responsive-collapse\" data-toggle=\"collapse\" type=\"button\">\n						<span class=\"icon-bar\"></span>\n						<span class=\"icon-bar\"></span>\n						<span class=\"icon-bar\"></span>\n					</button>\n				\n					<a class=\"navbar-brand\" href=\"/\"><img src=\"images/logo.png\" alt=\"Your Logo\"></a>\n					\n					<div class=\"nav-collapse collapse navbar-responsive-collapse\">\n						<ul class=\"nav navbar-nav\">\n							<li class=\"active\">\n								<a href=\"#\">Home</a>\n							</li>\n							\n							<li class=\"dropdown\">\n								<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Services <strong class=\"caret\"></strong></a>\n								\n								<ul class=\"dropdown-menu\">\n									<li>\n										<a href=\"#\">Web Design</a>\n									</li>\n									\n									<li>\n										<a href=\"#\">Web Development</a>\n									</li>\n									\n									<li>\n										<a href=\"#\">SEO</a>\n									</li>\n									\n									<li class=\"divider\"></li>\n									\n									<li class=\"dropdown-header\">More Services</li>\n									\n									<li>\n										<a href=\"#\">Content Creation</a>\n									</li>\n									\n									<li>\n										<a href=\"#\">Social Media Marketing</a>\n									</li>\n								</ul><!-- end dropdown-menu -->\n							</li>\n						</ul>\n						\n						<form class=\"navbar-form pull-left\">\n							<input type=\"text\" class=\"form-control\" placeholder=\"Search this site...\" id=\"searchInput\">\n							<button type=\"submit\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-search\"></span></button>\n						</form><!-- end navbar-form -->\n						\n						<ul class=\"nav navbar-nav pull-right\">\n							<li class=\"dropdown\">\n								<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-user\"></span> My Account <strong class=\"caret\"></strong></a>\n								\n								<ul class=\"dropdown-menu\">\n									<li>\n										<a href=\"#\"><span class=\"glyphicon glyphicon-wrench\"></span> Settings</a>\n									</li>\n									\n									<li>\n										<a href=\"#\"><span class=\"glyphicon glyphicon-refresh\"></span> Update Profile</a>\n									</li>\n									\n									<li>\n										<a href=\"#\"><span class=\"glyphicon glyphicon-briefcase\"></span> Billing</a>\n									</li>\n									\n									<li class=\"divider\"></li>\n									\n									<li>\n										<a href=\"#\"><span class=\"glyphicon glyphicon-off\"></span> Sign out</a>\n									</li>\n								</ul>\n							</li>\n						</ul><!-- end nav pull-right -->\n					</div><!-- end nav-collapse -->\n				\n				</div><!-- end container -->\n			</div><!-- end navbar -->\n			\n			\n			<div class=\"carousel slide\" id=\"myCarousel\">\n			\n				<!-- Indicators -->\n				<ol class=\"carousel-indicators\">\n					<li class=\"active\" data-slide-to=\"0\" data-target=\"#myCarousel\"></li>\n					<li data-slide-to=\"1\" data-target=\"#myCarousel\"></li>\n					<li data-slide-to=\"2\" data-target=\"#myCarousel\"></li>\n				</ol>\n			\n				<!-- Wrapper for slides -->\n				<div class=\"carousel-inner\">\n					<div class=\"item active\" id=\"slide1\">\n						<div class=\"carousel-caption\">\n							<h4>Bootstrap 3</h4>\n							<p>Learn how to build your first responsive website with the brand new Twitter Bootstrap 3!</p>\n						</div><!-- end carousel-caption-->\n					</div><!-- end item -->\n					\n					<div class=\"item\" id=\"slide2\">\n						<div class=\"carousel-caption\">\n							<h4>Learn to code a website in 4-hours!</h4>\n							<p>PSD to HTML5 &amp; CSS3 is a popular Udemy course that has helped thousands of aspiring web designers launch their web design career.</p>\n						</div><!-- end carousel-caption-->\n					</div><!-- end item -->\n					\n					<div class=\"item\" id=\"slide3\">\n						<div class=\"carousel-caption\">\n							<h4>Web Hosting 101</h4>\n							<p>Learn how to buy a perfect domain name and hosting package, and get your website live on the web with ease.</p>\n						</div><!-- end carousel-caption-->\n					</div><!-- end item -->\n				</div><!-- carousel-inner -->\n				\n				<!-- Controls -->\n				<a class=\"left carousel-control\" data-slide=\"prev\" href=\"#myCarousel\"><span class=\"icon-prev\"></span></a>\n				<a class=\"right carousel-control\" data-slide=\"next\" href=\"#myCarousel\"><span class=\"icon-next\"></span></a>\n			\n			</div><!-- end myCarousel -->\n			\n			\n			<div class=\"row\" id=\"bigCallout\">\n				<div class=\"col-12\">\n					\n					<div class=\"alert alert-success alert-block fade in\" id=\"successAlert\">\n						<button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\n						\n						<h4>Success!</h4>\n						<p>You just made this element display by using jQuery. Click the \"x\" in the top right corner to close this bad boy.</p>\n					</div><!-- end alert -->\n					\n					<!-- Visible only on small devices -->\n					<div class=\"well well-small visible-sm\">\n						<a href=\"\" class=\"btn btn-large btn-block btn-default\"><span class=\"glyphicon glyphicon-phone\"></span> Give us a call!</a>\n					</div><!-- end well-small -->\n					\n					<div class=\"well\">\n						<div class=\"page-header\">\n							<h1>A Fancy Header <small>A subheader for extra awesome.</small></h1>\n						</div><!-- end page-header -->\n						\n						<p class=\"lead\">Some solid leading copy will help get your users engaged. Use this area to come up with something real nice. Know what I'm sayin?</p>\n						\n						<a href=\"\" class=\"btn btn-large btn-primary\" id=\"alertMe\">Click a nice big button</a>\n						<a href=\"\" class=\"btn btn-large btn-link\">or a secondary link</a>\n					</div><!-- end well -->\n					\n				</div><!-- end col-12 -->\n			</div><!-- end bigCallout -->\n			\n			\n			<div class=\"row\" id=\"featuresHeading\">\n				<div class=\"col-12\">\n					<h2>More Features</h2>\n					<p class=\"lead\">Cornhole kitsch Williamsburg pug bicycle rights vegan. Neutra food truck occupy kitsch sustainable.</p>\n				</div><!-- end col-12 -->\n			</div><!-- end featuresHeading -->\n			\n			\n			<div class=\"row\" id=\"features\">\n				<div class=\"col-sm-4 feature\">\n					<div class=\"panel\">\n						<div class=\"panel-heading\">\n							<h3 class=\"panel-title\">Markup with HTML5</h3>\n						</div><!-- end panel-heading -->\n						<img src=\"images/badge_html5.jpg\" alt=\"HTML5\" class=\"img-circle\">\n						\n						<p>90's authentic single-origin coffee stumptown Pinterest. Fap aesthetic dreamcatcher pickled Brooklyn irony.</p>\n						\n						<a href=\"https://www.udemy.com/build-beautiful-html5-website/\" target=\"_blank\" class=\"btn btn-warning btn-block\">Learn to code HTML5</a>\n					</div><!-- end panel -->\n				</div><!-- end feature -->\n				\n				<div class=\"col-sm-4 feature\">\n					<div class=\"panel\">\n						<div class=\"panel-heading\">\n							<h3 class=\"panel-title\">Style with CSS3</h3>\n						</div><!-- end panel-heading -->\n						<img src=\"images/badge_css3.jpg\" alt=\"CSS3\" class=\"img-circle\">\n						\n						<p>90's authentic single-origin coffee stumptown Pinterest. Fap aesthetic dreamcatcher pickled Brooklyn irony.</p>\n						\n						<a href=\"https://www.udemy.com/build-beautiful-html5-website/\" target=\"_blank\" class=\"btn btn-danger btn-block\">Style it up with CSS3</a>\n					</div><!-- end panel -->\n				</div><!-- end feature -->\n				\n				<div class=\"col-sm-4 feature\">\n					<div class=\"panel\">\n						<div class=\"panel-heading\">\n							<h3 class=\"panel-title\">Framework by Bootstrap 3</h3>\n						</div><!-- end panel-heading -->\n						<img src=\"images/badge_bootstrap.jpg\" alt=\"Bootstrap 3\" class=\"img-circle\">\n						\n						<p>90's authentic single-origin coffee stumptown Pinterest. Fap aesthetic dreamcatcher pickled Brooklyn irony.</p>\n						\n						<a href=\"http://getbootstrap.com/\" target=\"_blank\" class=\"btn btn-info btn-block\">More Bootstrap</a>\n					</div><!-- end panel -->\n				</div><!-- end feature -->\n			</div><!-- end features -->\n			\n			\n			<div class=\"row\" id=\"moreInfo\">\n				<div class=\"col-sm-6\">\n					<h3>Neat Tabbable Content</h3>\n					<div class=\"tabbable\">\n						<ul class=\"nav nav-tabs\">\n							<li class=\"active\"><a href=\"#tab1\" data-toggle=\"tab\">Section 1</a></li>\n							<li><a href=\"#tab2\" data-toggle=\"tab\">Section 2</a></li>\n						</ul>\n						<div class=\"tab-content\">\n							<div class=\"tab-pane active\" id=\"tab1\">\n								<h4><span class=\"glyphicon glyphicon-map-marker\"></span> Our Location <small>More like our favourite surf spot</small></h4>\n								\n								<iframe width=\"100%\" height=\"200\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=waikiki+beach&amp;aq=&amp;sll=19.896766,-155.582782&amp;sspn=8.711424,11.854248&amp;ie=UTF8&amp;hq=&amp;hnear=Waikiki+Beach,+Honolulu,+Hawaii,+United+States&amp;t=m&amp;ll=21.277298,-157.8265&amp;spn=0.015996,0.036478&amp;z=14&amp;output=embed\"></iframe>\n								\n								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n								\n								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n							</div><!-- end tab-pane -->\n							\n							<div class=\"tab-pane\" id=\"tab2\">\n								<h4>A Left Floated Picture <small>Using Placehold.it</small></h4>\n								\n								<img src=\"http://placehold.it/140\" class=\"thumbnail pull-left\" alt=\"Placeholder image\">\n								\n								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n								\n								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n								\n								<hr>\n								\n								<a href=\"#myModal\" role=\"button\" class=\"btn btn-warning\" data-toggle=\"modal\"><span class=\"glyphicon glyphicon-hand-up\"></span> Click for a Modal Window!</a>\n								\n								<div class=\"modal fade\" id=\"myModal\">\n									<div class=\"modal-dialog\">\n										<div class=\"modal-content\">\n											<div class=\"modal-header\">\n												<button class=\"close\" data-dismiss=\"modal\">&times;</button>\n												\n												<h4 class=\"modal-title\">A Modal Window</h4>\n											</div><!-- end modal-header -->\n											<div class=\"modal-body\">\n												<h4>Text in a modal</h4>\n												\n												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n												\n												<h4>Popovers in a modal</h4>\n												<a href=\"#\" class=\"btn btn-danger pop\" data-toggle=\"popover\" data-placement=\"top\" data-original-title=\"You clicked it!\" data-content=\"I knew you would.\">Don't click this button</a>\n												\n												<h4>Tooltips in a modal</h4>\n												<a href=\"\" data-original-title=\"Tooltip\" rel=\"tooltip\">This link</a> should have a tooltip, and so should <a href=\"#\" data-original-title=\"Woohoo!\" rel=\"tooltip\">this one</a>!\n												\n												<hr>\n												\n												<p><small class=\"text-muted\">PS. This form doesn't do anything. Just a heads up.</small></p>\n												\n												<form class=\"form-horizontal\">\n													<div class=\"form-group\">\n														<label class=\"col-lg-2 control-label\" for=\"inputName\">Name</label>\n														<div class=\"col-lg-10\">\n															<input class=\"form-control\" id=\"inputName\" placeholder=\"Name\" type=\"text\">\n														</div>\n													</div>\n													\n													<div class=\"form-group\">\n														<label class=\"col-lg-2 control-label\" for=\"inputEmail\">Email</label>\n														<div class=\"col-lg-10\">\n															<input class=\"form-control\" id=\"inputEmail\" placeholder=\"Email\" type=\"email\">\n														</div>\n													</div>\n													\n													<div class=\"form-group\">\n														<label class=\"col-lg-2 control-label\" for=\"inputMessage\">Message</label>\n														<div class=\"col-lg-10\">\n															<textarea class=\"form-control\" id=\"inputMessage\" placeholder=\"Message\" rows=\"3\"></textarea>\n															<button class=\"btn btn-success pull-right\" type=\"submit\">Send!</button>\n														</div>\n													</div>\n												</form>\n											</div><!-- end modal-body -->\n											\n											<div class=\"modal-footer\">\n												<button class=\"btn btn-default\" data-dismiss=\"modal\" type=\"button\">Close</button> <button class=\"btn btn-primary\" type=\"button\">Save changes</button>\n											</div><!-- end modal-footer -->\n										</div><!-- end modal-content -->\n									</div><!-- end modal-dialog -->\n								</div><!-- end myModal -->\n								\n							</div><!-- end tab-pane -->\n						</div><!-- end tab-content -->\n					</div><!-- end tabbable -->\n				</div><!-- end col-sm-6 -->\n				\n				<div class=\"col-sm-6\">\n					<h3>Some Text Info</h3>\n					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n					\n					<h4>A List Group</h4>\n					\n					<div class=\"list-group\">\n						<a href=\"#\" class=\"list-group-item\">\n							<h4 class=\"list-group-item-heading\">Kale</h4>\n							<p class=\"list-group-item-text\">Kale or borecole is a vegetable with green or purple leaves, in which the central leaves do not form a head.</p>\n						</a>\n						<a href=\"#\" class=\"list-group-item\">\n							<h4 class=\"list-group-item-heading\">Carrots</h4>\n							<p class=\"list-group-item-text\">The carrot is a root vegetable, usually orange in colour, though purple, red, white, and yellow varieties exist. It has a crisp texture when fresh.</p>\n						</a>\n						<a href=\"#\" class=\"list-group-item\">\n							<h4 class=\"list-group-item-heading\">Steel-cut oats</h4>\n							<p class=\"list-group-item-text\">Steel-cut oats are whole grain groats which have been cut into pieces. They are commonly used in Scotland and Ireland to make porridge.</p>\n						</a>\n					</div><!-- list-group -->\n					\n					<h5>A small heading</h5>\n					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n				</div><!-- end col-sm-6 -->\n			</div><!-- end moreInfo -->\n			\n			<hr>\n			\n			<div class=\"row\" id=\"moreCourses\">\n				<div class=\"col-12\">\n					<h3>Learn more about Web Design</h3>\n					<div class=\"thumbnails row\">\n						<div class=\"col-6\">\n							<div class=\"thumbnail\">\n								<img src=\"images/item_psd2html5.jpg\" alt=\"PSD to HTML5 & CSS3\">\n								\n								<div class=\"label label-success price\"><span class=\"glyphicon glyphicon-tag\"></span> <sup>$</sup>39</div>\n								\n								<div class=\"caption\">\n									<h3>PSD to HTML5 &amp; CSS3</h3>\n									\n									<p>Learn how to take a PSD and turn it into a beautiful, hand-coded HTML5 &amp; CSS3 website with this web design crash course.</p>\n									\n									<p><a href=\"https://www.udemy.com/build-beautiful-html5-website/\" class=\"btn btn-primary btn-small\" target=\"_blank\">Take course</a> <a href=\"https://www.udemy.com/build-beautiful-html5-website/\" target=\"_blank\" class=\"btn btn-small btn-link\">Learn more</a></p>\n								</div><!-- end caption -->\n							</div><!-- end thumbnail -->\n						</div><!-- end col-6 -->\n						\n						<div class=\"col-6\">\n							<div class=\"thumbnail\">\n								<img src=\"images/item_webhosting101.jpg\" alt=\"Web Hosting 101\">\n								\n								<div class=\"label label-info price\"><span class=\"glyphicon glyphicon-tag\"></span> Free</div>\n								\n								<div class=\"caption\">\n									<h3>Web Hosting 101</h3>\n									\n									<p>Learn how to publish your own website live in no time with this web hosting crash course. Plus setup your first Wordpress site in 5-minutes!</p>\n									\n									<p><a href=\"https://www.udemy.com/web-hosting-101/\" class=\"btn btn-primary btn-small\" target=\"_blank\">Take course</a> <a href=\"https://www.udemy.com/web-hosting-101/\" target=\"_blank\" class=\"btn btn-small btn-link\">Learn more</a></p>\n								</div><!-- end caption -->\n							</div><!-- end thumbnail -->\n						</div><!-- end col-6 -->\n					</div><!-- end row -->\n				</div><!-- end col-12 -->\n			</div><!-- end moreCourses -->\n		</div><!-- end container -->\n		\n		<footer>\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"col-sm-2\">\n					<h6>Copyright &copy; 2013 {name}</h6>\n					</div><!-- end col-sm-2 -->\n					\n					<div class=\"col-sm-4\">\n						<h6>About Us</h6>\n						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n					</div><!-- end col-sm-4 -->\n					\n					<div class=\"col-sm-2\">\n						<h6>Navigation</h6>\n						<ul class=\"unstyled\">\n							<li><a href=\"#\">Home</a></li>\n							<li><a href=\"#\">Services</a></li>\n							<li><a href=\"#\">Links</a></li>\n							<li><a href=\"#\">Contact</a></li>\n						</ul>\n					</div><!-- end col-sm-2 -->\n					\n					<div class=\"col-sm-2\">\n						<h6>Follow Us</h6>\n						<ul class=\"unstyled\">\n							<li><a href=\"#\">Twitter</a></li>\n							<li><a href=\"#\">Facebook</a></li>\n							<li><a href=\"#\">Google Plus</a></li>\n						</ul>\n					</div><!-- end col-sm-2 -->\n					\n					<div class=\"col-sm-2\">\n						<h6>Coded with <span class=\"glyphicon glyphicon-heart\"></span> by Brad</h6>\n					</div><!-- end col-sm-2 -->\n				</div><!-- end row -->\n			</div><!-- end container -->\n		</footer>\n	\n\n	<!-- All Javascript at the bottom of the page for faster page loading -->\n		\n	<!-- First try for the online version of jQuery-->\n	<script src=\"http://code.jquery.com/jquery.js\"></script>\n	\n	<!-- If no online access, fallback to our hardcoded version of jQuery -->\n	<script>window.jQuery || document.write('<script src=\"includes/js/jquery-1.8.2.min.js\"><\\/script>')</script>\n	\n	<!-- Bootstrap JS -->\n	<script src=\"bootstrap/js/bootstrap.min.js\"></script>\n	\n	<!-- Custom JS -->\n	<script src=\"includes/js/script.js\"></script>\n	\n	</body>\n</html>\n\n",
+			"file": "/C/wamp/www/BootstrapFinalWebsite/index_mine.html",
+			"file_size": 20606,
+			"file_write_time": 130626688473431140,
+			"settings":
+			{
+				"buffer_size": 20903,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "	<!-- All Javascript at the bottom of the page for faster page loading -->\n		\n	<!-- First try for the online version of jQuery-->\n	<script src=\"http://code.jquery.com/jquery.js\"></script>\n	\n	<!-- If no online access, fallback to our hardcoded version of jQuery -->\n	<script>window.jQuery || document.write('<script src=\"includes/js/jquery-1.8.2.min.js\"><\\/script>')</script>\n	\n	<!-- Bootstrap JS -->\n	<script src=\"bootstrap/js/bootstrap.min.js\"></script>\n	\n	<!-- Custom JS -->\n	<script src=\"includes/js/script.js\"></script>\n\n\n\n\n\n\n\n\n\n	-------------------------------------------------------------\n\n\n\n	    <!-- All Javascript at the bottom of the page for faster page loading -->\n    <?= $this->Html->script('ie10-viewport-bug-workaround'); ?>\n\n    <!-- First try for the online version of jQuery-->\n    <script src=\"http://code.jquery.com/jquery.js\"></script>\n\n    \n    <!-- If no online access, fallback to our hardcoded version of jQuery -->\n    <script>window.jQuery || document.write('<script src=\"/js/jquery-1.8.2.min.js\"><\\/script>')</script>\n    \n    <!-- Bootstrap JS -->\n     <?= $this->Html->script('bootstrap.min'); ?>\n    \n    <!-- Custom JS -->\n    <script src=\"script.js\"></script>",
+			"settings":
+			{
+				"buffer_size": 1194,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Template/Element/navigation_bar.ctp",
+			"settings":
+			{
+				"buffer_size": 5838,
+				"line_ending": "Windows",
+				"name": "navbar.ctp"
+			}
+		},
+		{
+			"file": "config/routes.php",
+			"settings":
+			{
+				"buffer_size": 2270,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Controller/AppController.php",
+			"settings":
+			{
+				"buffer_size": 3911,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Template/Layout/default.ctp",
+			"settings":
+			{
+				"buffer_size": 3236,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "		<!-- Website Title & Description for Search Engine purposes -->\n		<title>Code a Responsive Website with Twitter Bootstrap 3</title>\n		<meta name=\"description\" content=\"Learn how to code your first responsive website with the new Twitter Bootstrap 3.\">\n		\n		<!-- Mobile viewport optimized -->\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n		\n		<!-- Bootstrap CSS -->\n		<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">\n		<link href=\"includes/css/bootstrap-glyphicons.css\" rel=\"stylesheet\">\n		\n		<!-- Custom CSS -->\n		<link rel=\"stylesheet\" href=\"includes/css/styles.css\">\n		\n		<!-- Include Modernizr in the head, before any other Javascript -->\n		<script src=\"includes/js/modernizr-2.6.2.min.js\"></script>\n\n\n\n		-------------------------------------------\n\n\n\n\n\n    <!-- Website Title & Description for Search Engine purposes -->\n    <title>\n        <?= $cakeDescription ?>:\n        <?= $this->fetch('title') ?>\n    </title>\n    <meta name=\"description\" content=\"A players utility for the Camarilla.ca\">\n    \n    <!-- Mobile viewport optimized -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n\n    \n\n\n\n\n    <?= $this->Html->meta('icon') ?>\n\n\n    <!-- Bootstrap CSS -->\n    <?= \n        //$this->Html->css('cake.generic');\n        $this->Html->css(['bootstrap', 'bootstrap-glyphicons', 'bootstrap-theme', 'autocomplete', 'styles']);\n    ?>\n\n\n    <?= $this->Html->script('jquery-1.8.2.min'); ?>\n	<?= $this->Html->script('jquery.autocomplete.min'); ?>\n    <?= $this->Html->script('modernizr-2.6.2.min'); ?>\n\n	<?= $this->fetch('meta') ?>\n	<?= $this->fetch('css') ?>\n	<?= $this->fetch('script') ?>\n\n    <!--[if lt IE 9]>\n    <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n    <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n    <![endif]-->\n\n\n\n\n    -------------------------------------\n\n        <?= $this->Html->meta('icon') ?>\n    <!-- Website Title & Description for Search Engine purposes -->\n    <title>\n        <?= $cakeDescription ?>:\n        <?= $this->fetch('title') ?>\n    </title>\n    <meta name=\"description\" content=\"A players utility for the Camarilla.ca\">\n        \n    <!-- Mobile viewport optimized -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n\n    <!-- Bootstrap CSS -->\n    <?= $this->Html->css(['bootstrap.min', 'bootstrap-glyphicons', 'autocomplete', 'styles']); ?>\n\n    <!-- Include Modernizr in the head, before any other Javascript -->\n    <?= $this->Html->script('modernizr-2.6.2.min'); ?>\n\n    <?= $this->fetch('meta') ?>\n    <?= $this->fetch('css') ?>\n    <?= $this->fetch('script') ?>",
+			"settings":
+			{
+				"buffer_size": 2781,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/bootstrap.php",
+			"settings":
+			{
+				"buffer_size": 5640,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "webroot/css/bootstrap.css",
+			"settings":
+			{
+				"buffer_size": 137107,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp/www/cam-website",
+		"/C/wamp/www/cam-website/config",
+		"/C/wamp/www/cam-website/src",
+		"/C/wamp/www/cam-website/src/Controller",
+		"/C/wamp/www/cam-website/src/Template",
+		"/C/wamp/www/cam-website/src/Template/Announcements",
+		"/C/wamp/www/cam-website/src/Template/DomainTypes",
+		"/C/wamp/www/cam-website/src/Template/Element",
+		"/C/wamp/www/cam-website/src/Template/Email",
+		"/C/wamp/www/cam-website/src/Template/Email/html",
+		"/C/wamp/www/cam-website/src/Template/Email/text",
+		"/C/wamp/www/cam-website/src/Template/Layout",
+		"/C/wamp/www/cam-website/src/Template/Members",
+		"/C/wamp/www/cam-website/src/Template/MembershipClasses",
+		"/C/wamp/www/cam-website/src/Template/Pages",
+		"/C/wamp/www/cam-website/src/Template/PrestigeCategories",
+		"/C/wamp/www/cam-website/src/Template/PrestigeItems",
+		"/C/wamp/www/cam-website/src/Template/Roles",
+		"/C/wamp/www/cam-website/src/Template/Venues",
+		"/C/wamp/www/cam-website/tests",
+		"/C/wamp/www/cam-website/webroot",
+		"/C/wamp/www/cam-website/webroot/bootstrap",
+		"/C/wamp/www/cam-website/webroot/css",
+		"/C/wamp/www/cam-website/webroot/img"
+	],
+	"file_history":
+	[
+		"/C/wamp/www/cam-website/src/Template/Layout/default.bak",
+		"/C/wamp/www/cam-website/src/Controller/ResourcesController.php",
+		"/C/Users/Michael/Desktop/04 - Code Chunks/A - layout.html",
+		"/C/wamp/www/cam-website/plugins/Gourmet/TwitterBootstrap/src/Template/Layout/default.ctp",
+		"/C/wamp/www/cam-website/src/Controller/AppController.php",
+		"/C/wamp/www/cam-website/src/Controller/MembersController.php",
+		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
+		"/C/wamp/www/cam-website/config/bootstrap.php",
+		"/C/Users/Michael/Desktop/04 - Code Chunks/B - navbar.html",
+		"/C/wamp/www/cam-website/webroot/css/styles.css",
+		"/C/wamp/www/cam-website/plugins/SimplePress/src/Template/Layout/default.ctp",
+		"/C/wamp/www/cam-website/src/View/Helper/AjaxHelper.php",
+		"/C/wamp/www/cam-website/src/Controller/Component/AjaxComponent.php",
+		"/C/wamp/www/cam-website/src/Template/Element/auto_complete.ctp",
+		"/C/wamp/www/cam-website/src/Controller/Component/AccessComponent.php",
+		"/C/wamp/www/cam-website/src/Template/Announcements/add.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/AnnouncementsTable.php",
+		"/C/wamp/www/cam-website/src/Controller/AnnouncementsController.php",
+		"/C/wamp/www/cam-website/src/Template/Announcements/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/Announcements/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/Announcements/view.ctp",
+		"/C/wamp/www/cam-website/src/Template/Element/layout_head.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/DomainsTable.php",
+		"/C/wamp/www/ancientwatcher/app/Controller/EventsController.php",
+		"/C/wamp/www/ancientwatcher/app/View/Events/index.ctp",
+		"/C/wamp/www/cam-website/config/app.php",
+		"/C/wamp/www/cam-website/config/routes.php",
+		"/C/wamp/www/cam-website/src/Template/Members/index.ctp",
+		"/C/wamp/www/cam-website/src/Model/Entity/Member.php",
+		"/C/wamp/www/ancientwatcher/app/Controller/DomainsController.php",
+		"/C/wamp/www/cam-website/src/Template/Layout/default.ctp",
+		"/C/wamp/www/cam-website/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php",
+		"/C/wamp/www/cam-website/src/Template/Articles/index.ctp",
+		"/C/wamp/www/cam-website/composer.json",
+		"/C/wamp/www/cam-website/logs/error.log",
+		"/C/wamp/www/cam-website/src/View/Widget/Autocomplete.php",
+		"/C/wamp/www/cam-website/src/Controller/ArticlesController.php",
+		"/C/wamp/www/cam-website/src/Controller/Component/PrgPatternComponent.php",
+		"/C/wamp/www/cam-website/vendor/cakephp/cakephp/src/Controller/Component/CookieComponent.php",
+		"/C/wamp/www/cam-website/src/Template/Articles/auto_complete.ctp",
+		"/C/wamp/www/ancientwatcher/app/Controller/LocationsController.php",
+		"/C/wamp/www/ancientwatcher/app/Controller/Component/PrgPatternComponent.php",
+		"/C/wamp/www/cam-website/src/Template/Layout/ajax.ctp",
+		"/C/wamp/www/ancientwatcher/app/Model/Location.php",
+		"/C/wamp/www/ancientwatcher/app/webroot/css/cake.generic.css",
+		"/C/wamp/www/ancientwatcher/app/webroot/css/style.css",
+		"/C/wamp/www/cam-website/webroot/css/autocomplete.css",
+		"/C/wamp/www/ancientwatcher/app/View/Helper/AjaxHelper.php",
+		"/C/wamp/www/ancientwatcher/app/Controller/AppController.php",
+		"/C/wamp/www/ancientwatcher/app/View/Elements/auto_complete.ctp",
+		"/C/wamp/www/ancientwatcher/app/View/Locations/index.ctp",
+		"/C/wamp/www/cam-website/src/View/Helper/JavascriptHelper.php",
+		"/C/wamp/www/cam-website/vendor/cakephp/cakephp/src/View/Widget/Textarea.php",
+		"/C/wamp/www/cam-website/vendor/cakephp/cakephp/src/View/StringTemplate.php",
+		"/C/wamp/www/cam-website/config/app_form.php",
+		"/C/wamp/www/cam-website/vendor/cakephp/cakephp/src/View/Widget/WidgetInterface.php",
+		"/C/wamp/www/ancientwatcher/lib/Cake/View/Helper/JsHelper.php",
+		"/C/wamp/www/cam-website/src/View/Helper/LinkHelper.php",
+		"/C/wamp/www/cam-website/src/Controller/AssignmentsController.php",
+		"/C/wamp/www/cam-website/src/Template/Assignments/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/Assignments/add.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/AssignmentsTable.php",
+		"/C/wamp/www/cam-website/src/Template/Members/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/Members/activate.ctp",
+		"/C/wamp/www/cam-website/src/Template/Members/register.ctp",
+		"/C/wamp/www/cam-website/src/Template/Members/view.ctp",
+		"/C/wamp/www/cam-website/src/Template/Games/view.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/MembersTable.php",
+		"/C/wamp/www/cam-website/src/Template/Email/html/add_member.ctp",
+		"/C/wamp/www/cam-website/src/Template/Email/text/add_member.ctp",
+		"/C/wamp/www/cam-website/src/Template/Members/edit.ctp",
+		"/C/wamp/www/cam-website/src/View/Helper/AccessHelper.php",
+		"/C/wamp/www/cam-website/src/Model/Table/DomainTypesTable.php",
+		"/C/wamp/www/cam-website/src/Template/DomainTypes/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/DomainTypes/view.ctp",
+		"/C/wamp/www/cam-website/src/Template/Roles/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/Roles/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/Roles/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/Roles/view.ctp",
+		"/C/wamp/www/cam-website/src/Model/Entity/Assignment.php",
+		"/C/wamp/www/cam-website/src/Template/DomainTypes/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/DomainTypes/index.ctp",
+		"/C/wamp/www/cam-website/src/Controller/PrestigeItemsController.php",
+		"/C/wamp/www/cam-website/src/Template/PrestigeItems/index.ctp",
+		"/C/wamp/www/cam-website/src/Controller/RolesController.php",
+		"/C/wamp/www/cam-website/src/Lib/Access.php",
+		"/C/wamp/www/cam-website/src/Template/Assignments/delete.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeLogs/view.ctp",
+		"/C/wamp/www/cam-website/src/Controller/PrestigeLogsController.php",
+		"/C/wamp/www/cam-website/src/Template/PrestigeLogs/edit.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/ResourcesTable.php",
+		"/C/wamp/www/cam-website/src/Controller/PrestigeCategoriesController.php",
+		"/C/wamp/www/cam-website/src/Model/Table/PrestigeItemsTable.php",
+		"/C/wamp/www/cam-website/src/Model/Table/PrestigeLogsTable.php",
+		"/C/wamp/www/cam-website/src/Model/Table/PrestigeTypesTable.php",
+		"/C/wamp/www/cam-website/src/Template/PrestigeItems/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeLogs/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeItems/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeTypes/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeTypes/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeTypes/view.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeItems/view.ctp",
+		"/C/wamp/www/cam-website/src/Model/Entity/PrestigeItem.php",
+		"/C/wamp/www/cam-website/src/Model/Entity/PrestigeLog.php",
+		"/C/wamp/www/cam-website/src/Model/Entity/PrestigeType.php",
+		"/C/wamp/www/cam-website/src/Controller/PrestigeTypesController.php",
+		"/C/wamp/www/cam-website/src/Template/PrestigeTypes/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeLogs/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/MembershipClasses/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeCategories/index.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/PrestigeCategoriesTable.php",
+		"/C/wamp/www/cam-website/src/Model/Table/BooksTable.php",
+		"/C/wamp/www/cam-website/src/Model/Table/AffiliatesTable.php",
+		"/C/wamp/www/cam-website/src/Model/Entity/PrestigeCategory.php",
+		"/C/wamp/www/cam-website/src/Template/PrestigeCategories/add.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeCategories/edit.ctp",
+		"/C/wamp/www/cam-website/src/Template/PrestigeCategories/view.ctp",
+		"/C/wamp/www/cam-website/src/Template/Books/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/Articles/delete.ctp",
+		"/C/wamp/www/cam-website/src/Model/Table/VenuesTable.php",
+		"/C/wamp/www/cam-website/src/Model/Entity/Venue.php",
+		"/C/wamp/www/cam-website/src/Template/Assignments/index.ctp",
+		"/C/wamp/www/cam-website/src/Template/Assignments/view.ctp",
+		"/C/Users/Michael/Downloads/CCFC Handbook-20090312.rtf",
+		"/C/wamp/www/cam-website/src/Model/Table/RolesTable.php",
+		"/C/wamp/www/cam-website/src/Model/Entity/Role.php",
+		"/C/wamp/www/cam-website/src/Model/Table/PermissionsTable.php",
+		"/C/wamp/www/cam-website/src/Template/Resources/index.ctp"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"C:\\wamp\\www\\cam-website\\src\\",
+			"C:\\wamp\\www\\cam-website\\src\\Controller",
+			"C:\\wamp\\www\\ancientwatcher\\app",
+			"C:\\wamp\\www\\ancientwatcher\\app\\Model",
+			"C:\\wamp\\www\\ancientwatcher\\app\\",
+			"C:\\wamp\\www\\cam-website\\vendor\\cakephp\\cakephp\\src\\Auth",
+			"C:\\wamp\\www\\laravel"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"icon-bar",
+			"index_mine.html",
+			".navbar {",
+			".collapse",
+			"collapse",
+			".navbar {",
+			"navbar-fixed-top",
+			"Article",
+			"Articles",
+			"Article",
+			"path",
+			"find(\"path\")",
+			"path",
+			"Article",
+			"article",
+			"session",
+			"camarillazz",
+			"root",
+			"root@localhost",
+			" root@localhost",
+			" 'root'@'localhost'",
+			"debug",
+			"$this->_config",
+			"Ajax->autoComplete",
+			"name_format",
+			"minChars",
+			"joins",
+			"NOT ",
+			" IS NOT ",
+			"Atricles",
+			"autocomplete",
+			"url",
+			" '<",
+			"format",
+			"_optionsToString",
+			"$this->Javascript",
+			");",
+			"array(",
+			"var",
+			"                ->",
+			"updateRoles2",
+			"$this->Html->link(",
+			"Item",
+			"Items",
+			"Category",
+			"Item",
+			"Items",
+			"stigeitem",
+			"book",
+			"stigeitem",
+			"Book",
+			"Category",
+			"Book",
+			"book",
+			"Books",
+			"Book",
+			"Books",
+			"prestigecategory",
+			"caT",
+			"MembershipClass",
+			"membershipClasses",
+			"MembershipClasses",
+			"book",
+			"books",
+			"}\n",
+			"Publisher",
+			"Book",
+			"Publisher",
+			"Assignment",
+			"php echo",
+			"affiliate",
+			"Affiliate",
+			"Affiliates",
+			"Affiliate",
+			"affiliates",
+			"Publisher",
+			"Assignment",
+			"Affiliate",
+			"player",
+			"Role",
+			"Player",
+			"player",
+			"User",
+			"users",
+			"Users",
+			"user",
+			"10",
+			"Users",
+			"IS",
+			"now",
+			"identify",
+			"');\n",
+			"composer.json"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"Announcement",
+			"announcement",
+			"];",
+			"[",
+			"public",
+			"$this->Access->accessLink($access, ",
+			"Log",
+			"Logs",
+			"ITem",
+			"Type",
+			"Types",
+			"stigeItem",
+			"prestigeItem",
+			"stigeItem",
+			"PrestigeItem",
+			"Item",
+			"prestigeItem",
+			"prestigeCategory",
+			"prestigeCategories",
+			"prestigeCategory",
+			"prestigecategories",
+			"prestigeCategory",
+			"Cat",
+			"PrestigeCategory",
+			"PrestigeCategories",
+			"membershipClass",
+			"membershipClasses",
+			"Resource",
+			"Permission",
+			"Venue",
+			"=",
+			"Continuity",
+			"Continuities",
+			"Continuity",
+			"Continuities",
+			"Book",
+			"Publisher",
+			"member",
+			"game",
+			"member"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 9,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/Template/Element/layout_head.ctp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2713,
+								1225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								673,
+								673
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Template/Pages/home.ctp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2839,
+								2839
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 960.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Controller/PagesController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1482,
+								1482
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 477.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Controller/GamesController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/wamp/www/BootstrapFinalWebsite/index_mine.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1409,
+								1435
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 107.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/Template/Element/navigation_bar.ctp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5838,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								683,
+								683
+							]
+						],
+						"settings":
+						{
+							"auto_name": "navbar.ctp",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "config/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1647,
+								1647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/Controller/AppController.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1536,
+								1536
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 780.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/Template/Layout/default.ctp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3151,
+								3151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1917.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1591,
+								1484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 748.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "config/bootstrap.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5640,
+								5640
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "webroot/css/bootstrap.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 137107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78787,
+								78787
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 79189.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "cam-website_prj.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 336.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
