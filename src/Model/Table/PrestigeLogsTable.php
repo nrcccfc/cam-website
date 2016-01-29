@@ -20,6 +20,11 @@ class PrestigeLogsTable extends AppTable {
             'cascadeCallbacks' => true,
             'foreignKey' => 'prestige_log_id',
         ]);
+        $this->hasMany('PrestigeLogsMembershipClasses', [
+            'dependant' => true,
+            'cascadeCallbacks' => true,
+            'foreignKey' => 'prestige_log_id',
+        ]);
         //$this->belongsToMany('PrestigeItems', [
         //    'through'=>'PrestigeLogsItems',
         //    'foreignKey' => 'prestige_log_id',
