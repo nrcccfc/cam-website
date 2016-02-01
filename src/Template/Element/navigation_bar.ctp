@@ -55,10 +55,13 @@
 				<?php endif; ?>
 			</ul>
 			
+			<!--
 			<form class="navbar-form pull-left">
 				<input type="text" class="form-control" placeholder="Search this site..." id="searchInput">
 				<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-			</form><!-- end navbar-form -->
+			</form>
+			-->
+			<!-- end navbar-form -->
 			
 			<ul class="nav navbar-nav pull-right">
 				<li class="dropdown">
