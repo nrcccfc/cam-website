@@ -72,12 +72,13 @@ class PrestigeLogsController extends AppController {
         $prestigeLog = $this->PrestigeLogs
             ->find()
             ->where($searchConditions)
-            ->contain(['Members', 
+            ->contain(['Members.Domains.DomainTypes', 
+                    'PrestigeLogsMembershipClasses.MembershipClasses', 
                     'PrestigeLogsItems'=> function ($q) {
                         return $q->order('prestigeLogsItems.locked', 'desc')
                             ->contain(['Domains', 
-                                'PrestigeItems.PrestigeCategories'=>function($q){return $q->select(['id', 'monthly_limit', 'name']);}, 
-                                    'Officers', 
+                                    'PrestigeItems.PrestigeCategories'=>function($q){return $q->select(['id', 'monthly_limit', 'name']);}, 
+                                    'Officers',
                                     'Venues.Games'=>function($q){return $q->select(['id', 'name', 'abbreviation']);}]);
                     }
                 ])
@@ -87,13 +88,13 @@ class PrestigeLogsController extends AppController {
         //debug($prestigeLog);
         $prestigeTotal = $this->PrestigeLogs->calculatePrestige($prestigeLog);
         //debug($this->PrestigeLogs->PrestigeLogsMembershipClasses->MembershipClasses);
-        $membershipClass = $this->PrestigeLogs->PrestigeLogsMembershipClasses->MembershipClasses->calculateMembershipClass($prestigeLog['Total'][0], $prestigeLog['Total'][1], $prestigeLog['Total'][2]);
+        $membershipClass = $this->PrestigeLogs->PrestigeLogsMembershipClasses->MembershipClasses->calculateMembershipClass($prestigeLog, $prestigeTotal);
 
         //debug($prestigeTotal);
         //debug($membershipClass);
 
         $statusList = $this->PrestigeLogs->PrestigeLogsItems->getPrestigeItemsStatusList();
-        $this->set(compact('prestigeLog', 'statusList', 'prestigeTotal'));
+        $this->set(compact('prestigeLog', 'statusList', 'prestigeTotal', 'membershipClass'));
     }
 
     public function approve() {

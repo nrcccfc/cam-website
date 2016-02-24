@@ -61,6 +61,15 @@
 		<dd><?= h( 'General: '.$prestigeTotal['Total'][0].', Regional: '.$prestigeTotal['Total'][1].', National: '.$prestigeTotal['Total'][2] ); ?>&nbsp;</dd>
 	</dl>
 
+	<dl>
+		<dt><?= __('Current Membership Class'); ?></dt>
+		<dd><?= h( $membershipClass['currentLevel']." (".$membershipClass['currentReqs'][0]."G, ".$membershipClass['currentReqs'][1]."R, ".$membershipClass['currentReqs'][2]."N)"); ?>&nbsp;</dd>
+	</dl>
+
+	<dl>
+		<dt><?= __('Next Membership Class'); ?></dt>
+		<dd><?= h( $membershipClass['nextLevel']." (".$membershipClass['nextReqs'][0]."G, ".$membershipClass['nextReqs'][1]."R, ".$membershipClass['nextReqs'][2]."N)"); ?>&nbsp;</dd>
+	</dl>
 
 
 

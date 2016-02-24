@@ -110,8 +110,48 @@ class MembershipClassesTable extends AppTable {
     }
 */
 
-    public function calculateMembershipClass($general_prestige, $regional_prestige, $national_prestige){
-        return "MC 9001";
+    public function calculateMembershipClass($prestigeLog, $prestigeTotal){
+        //Get the members current MC
+
+        $results = ['currentLevel'=>0, 'nextLevel'=>1, 'currentReqs'=>[], 'nextReqs'=>[]];
+        $affiliateId = $prestigeLog->member->domain->domain_type->affiliate_id;
+        $general_prestige = $prestigeTotal['Total'][0] + $prestigeTotal['Total'][1] + $prestigeTotal['Total'][2];
+        $regional_prestige = $prestigeTotal['Total'][1] + $prestigeTotal['Total'][2];
+        $national_prestige = $prestigeTotal['Total'][2];
+
+
+        //Get all the membershipClasses for the affiliate
+        $membershipClasses = $this->find('all')->where(['MembershipClasses.affiliate_id'=>$affiliateId])->order('MembershipClasses.level')->toArray();
+
+        for($i=0; $i<count($membershipClasses); $i++){
+            $j = $i + 1;
+            if($general_prestige >= $membershipClasses[$i]['general_prestige'] && $regional_prestige >= $membershipClasses[$i]['regional_prestige'] && $national_prestige >= $membershipClasses[$i]['national_prestige']){
+                $results['currentLevel'] = $membershipClasses[$i]['level'];
+                $results['currentReqs'][0] = $membershipClasses[$i]['general_prestige'];
+                $results['currentReqs'][1] = $membershipClasses[$i]['regional_prestige'];
+                $results['currentReqs'][2] = $membershipClasses[$i]['national_prestige'];
+
+                if ($i < count($membershipClasses)) {
+                    $results['nextLevel'] = $membershipClasses[$j]['level'];
+                    $results['nextReqs'][0] = $membershipClasses[$j]['general_prestige'];
+                    $results['nextReqs'][1] = $membershipClasses[$j]['regional_prestige'];
+                    $results['nextReqs'][2] = $membershipClasses[$j]['national_prestige'];
+                } else {
+                    $results['nextLevel'] = -1;
+                    $results['nextReqs'][0] = -1;
+                    $results['nextReqs'][1] = -1;
+                    $results['nextReqs'][2] = -1;
+                }
+                
+
+            }
+        }
+
+        //debug($prestigeLog);
+        //debug($prestigeTotal);
+        //debug($membershipClasses);
+        //debug($currentLevel);
+        return $results;
     }
 
 }
