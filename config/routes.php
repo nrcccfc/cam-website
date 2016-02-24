@@ -30,7 +30,7 @@ Router::scope('/', function($routes) {
 	//$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 	$routes->connect('/', ['controller' => 'Pages', 'action' => 'home'], ['_name' => 'home']);
 
-	$routes->connect('/members/', ['controller' => 'Members', 'action' => 'index'], ['_name' => 'members']);
+	$routes->connect('/Members/', ['controller' => 'Members', 'action' => 'index'], ['_name' => 'Members']);
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.

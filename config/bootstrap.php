@@ -179,6 +179,7 @@ Request::addDetector('tablet', function($request) {
 Plugin::load('DebugKit', ['bootstrap' => true]);
 Plugin::load('Migrations');
 Plugin::load('BootstrapUI');
+Plugin::load('Bake');
 ##Plugin::load('SimplePress');
 
 /**
@@ -188,5 +189,4 @@ Plugin::load('BootstrapUI');
 DispatcherFactory::add('Asset');
 DispatcherFactory::add('Routing');
 DispatcherFactory::add('ControllerFactory');
-
 

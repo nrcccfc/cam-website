@@ -74,11 +74,12 @@ class ResourcesTable extends AppTable {
     }
 */
 
-    public function getControllers($plugin = null, $prefix = null) {
+    public function getControllers($plugin = 'App', $prefix = null) {
         $ignoreList = [
             'AppController.php', 
             'InitializeController.php'];
-        if (!$plugin) {
+
+        if ($plugin === 'App') {
             $path = App::path('Controller' . (empty($prefix) ? '' : DS . Inflector::camelize($prefix)));
             $dir = new Folder($path[0]);
             $controllerFiles = $dir->find('.*Controller\.php');
@@ -87,86 +88,128 @@ class ResourcesTable extends AppTable {
             $dir = new Folder($path[0]);
             $controllerFiles = $dir->find('.*Controller\.php');
         }
+
         $results = [];
+        //debug($plugin);
         foreach($controllerFiles as $file){
             if(!in_array($file, $ignoreList)) {
                 $controller = explode('.', $file)[0];
-                array_push($results, str_replace('Controller', '', $controller));
-            }            
+                $controllerPath = $plugin.'\\'.str_replace('Controller', '', $controller);
+                array_push($results, $controllerPath);
+            }
         }
+        //debug($results);
         return $results;
     }
 
-    public function getActions($controllerName) {
-        $className = 'App\\Controller\\'.$controllerName.'Controller';
+    public function getPlugins(){
+        $results = [];
+        $dirPath = "../plugins";
+        $results = array_diff(scandir($dirPath), array('.', '..'));
+        return $results;
+    }
+
+    public function getActions($controllerName, $pluginName) {
+        $results = [$controllerName => []];
+
+        $className = $pluginName.'\\Controller\\'.$controllerName.'Controller';
         $class = new ReflectionClass($className);
         $actions = $class->getMethods(ReflectionMethod::IS_PUBLIC);
-        $results = [$controllerName => []];
+        
         $ignoreList = ['initialize', 'beforeFilter', 'afterFilter'];
         foreach($actions as $action){
             if($action->class == $className && !in_array($action->name, $ignoreList)){
                 array_push($results[$controllerName], $action->name);
             }
         }
+
         return $results;
     }
+
+
 
     public function getResources($onlyNew=false, $ownableOnly=false){
 
         //debug($this->getControllerList());
         $ignoreList = ['Pages'];
+
+        #Get the plugins
+        $plugins = $this->getPlugins();
+        //debug($plugins);
+
+
         $controllers = $this->getControllers();
+
+        foreach($plugins as $plugin){
+            $pluginControllers = $this->getControllers($plugin);
+            $pluginControllers = ['Incentives\\Timeas'];
+            $controllers = array_merge($controllers, $pluginControllers);
+        }
+        debug($controllers);
+
         $resources = [];
+
+
 
         if($onlyNew){
             $currentResources = $this->find('list')->toArray();
             //debug($currentResources);
         }
 
+
+
         $actions = [];
-        foreach($controllers as $controllerName){
+        foreach($controllers as $controllerPath){
             //debug($controllerName);
-            $table = TableRegistry::get($controllerName);
-            $ownable = false;
 
-            if (!in_array($controllerName, $ignoreList)){
-                //debug($table->schema()->column("member_id"));
-                $ownable = $table->schema()->column("member_id") !== null;
-            }
+            $tokens = explode("\\", $controllerPath);
+            if( count($tokens) == 2){
+                $pluginName = $tokens[0];
+                $controllerName = $tokens[1];
 
-            $controllerActions = $this->getActions($controllerName);
-            $validActions = [];
-            if ($onlyNew){
+                if (!in_array($controllerName, $ignoreList)){
+                    $table = TableRegistry::get($controllerName);
+                    $ownable = false;
+
                 
-                foreach($controllerActions as $actions){
-                    $actionList = [];
-                    foreach($actions as $action){
-                        $resourceName = $controllerName.":".$action;
-                        if (!in_array( $resourceName, $currentResources)){
-                            array_push($actionList, $action);
+                    //debug($table->schema()->column("member_id"));
+                    $ownable = $table->schema()->column("member_id") !== null;
+
+                    $controllerActions = $this->getActions($controllerName, $pluginName);
+                    $validActions = [];
+                    if ($onlyNew){
+                        
+                        foreach($controllerActions as $actions){
+                            $actionList = [];
+                            foreach($actions as $action){
+                                $resourceName = $controllerName.":".$action;
+                                if (!in_array( $resourceName, $currentResources)){
+                                    array_push($actionList, $action);
+                                }
+                            }
+
+                            //debug($resourceName);
+                            //debug($actionList);
                         }
+
+                        if (count($actionList)>0){
+                            $validActions = array($controllerName=>$actionList);
+                            //debug($validActions);
+                        }
+                    } else {
+                        $validActions = $controllerActions;
                     }
 
-                    //debug($resourceName);
-                    //debug($actionList);
-                }
 
-                if (count($actionList)>0){
-                    $validActions = array($controllerName=>$actionList);
-                    //debug($validActions);
-                }
-            } else {
-                $validActions = $controllerActions;
-            }
-
-
-            if(count($validActions)){
-                if ($ownableOnly && $ownable) {
-                    
-                    array_push($resources, $validActions);
-                    
-                } else {
-                    array_push($resources, $validActions);
+                    if(count($validActions)){
+                        if ($ownableOnly && $ownable) {
+                            
+                            array_push($resources, $validActions);
+                            
+                        } else {
+                            array_push($resources, $validActions);
+                        }
+                    }
                 }
             }
         }

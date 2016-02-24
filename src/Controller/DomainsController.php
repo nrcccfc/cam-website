@@ -68,7 +68,7 @@ class DomainsController extends AppController {
     }
 
     public function edit($id=null){
-        $domain = $this->Domain->findById($id)->first();
+        $domain = $this->Domains->findById($id)->first();
         if ($this->request->is(['post', 'put'])) {
             //Make sure the parent DomainType is of the same affiliate
             //$domainType->parent_affiliate_id = $this->DomainTypes->getParentAffiliate($this->request->data['parent_id'])->id;

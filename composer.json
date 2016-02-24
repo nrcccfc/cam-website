@@ -14,7 +14,8 @@
 		"friendsofcake/bootstrap-ui": "~0.3"
 	},
 	"require-dev": {
-		"d11wtq/boris": "1.0.*"
+		"d11wtq/boris": "1.0.*",
+		"cakephp/bake" : "~1.0"
 
 	},
 	"suggest": {

@@ -1,0 +1,14 @@
+.idea/*
+*.sublime-project
+*.sublime-workspace
+tmp
+vendor/*
+logs/*
+config/local.php
+composer.lock
+error.log
+debug.log
+*.log
+webroot/*.log
+.htaccess
+*.log

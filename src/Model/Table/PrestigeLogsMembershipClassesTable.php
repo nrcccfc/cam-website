@@ -97,7 +97,7 @@ class PrestigeLogsMembershipClassesTable extends AppTable {
             }
             return false;
         };
-*/
+
         
         //Make sure there is atleast one role selected
 
@@ -119,7 +119,7 @@ class PrestigeLogsMembershipClassesTable extends AppTable {
 
         return $rules;
     }
-    
+*/    
 
 
 

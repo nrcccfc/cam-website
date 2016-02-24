@@ -15,18 +15,27 @@
 		<dd><?= h($membershipClass->affiliate->name); ?>&nbsp;</dd>
 	</dl>
 	<dl>
-		<dt><?= __('General'); ?></dt>
-		<dd><?= h($membershipClass->general); ?>&nbsp;</dd>
+		<dt><?= __('Approval Roles'); ?></dt>
+		<dd>
+            <?php foreach ($membershipClass->roles as $role): ?>
+                <?= $this->Html->link(h($role->name), ['controller' => 'Roles', 'action' => 'view', h($role->id)])."," ?>
+            <?php endforeach; ?>&nbsp;
+        </dd>
 	</dl>
 	<dl>
-		<dt><?= __('Regional'); ?></dt>
-		<dd><?= h($membershipClass->regional); ?>&nbsp;</dd>
+		<dt><?= __('General Prestige'); ?></dt>
+		<dd><?= h($membershipClass->general_prestige); ?>&nbsp;</dd>
 	</dl>
 	<dl>
-		<dt><?= __('National'); ?></dt>
-		<dd><?= h($membershipClass->national); ?>&nbsp;</dd>
+		<dt><?= __('Regional Prestige'); ?></dt>
+		<dd><?= h($membershipClass->regional_prestige); ?>&nbsp;</dd>
+	</dl>
+	<dl>
+		<dt><?= __('National Prestige'); ?></dt>
+		<dd><?= h($membershipClass->national_prestige); ?>&nbsp;</dd>
 	</dl>
 <br>
+	<?= $this->Html->link('List Membership Classes', ['action'=>'index']); ?><br>
 	<?= $this->Html->link('Add Membership Class', ['action'=>'add']); ?><br>
 	<?= $this->Html->link('Edit Membership Class', ['action'=>'edit', $membershipClass->id]); ?><br>
 </div>

@@ -86,6 +86,11 @@ class PrestigeLogsController extends AppController {
             ;
         //debug($prestigeLog);
         $prestigeTotal = $this->PrestigeLogs->calculatePrestige($prestigeLog);
+        //debug($this->PrestigeLogs->PrestigeLogsMembershipClasses->MembershipClasses);
+        $membershipClass = $this->PrestigeLogs->PrestigeLogsMembershipClasses->MembershipClasses->calculateMembershipClass($prestigeLog['Total'][0], $prestigeLog['Total'][1], $prestigeLog['Total'][2]);
+
+        //debug($prestigeTotal);
+        //debug($membershipClass);
 
         $statusList = $this->PrestigeLogs->PrestigeLogsItems->getPrestigeItemsStatusList();
         $this->set(compact('prestigeLog', 'statusList', 'prestigeTotal'));
@@ -95,7 +100,10 @@ class PrestigeLogsController extends AppController {
         $assignments = $this->request->session()->read('Auth.User.Access.roles'); //This is technically the assignments
         //debug($assignments);
         //Get all the jobs from the user and list all the items they could approve.
+
+
         $prestigeLogsItems = $this->PrestigeLogs->PrestigeLogsItems->getPrestigeItemsToBeApproved($assignments);
+
         if ($this->request->is(['post', 'put'])) {
             //Update the object with request data.
             $patched = $this->PrestigeLogs->PrestigeLogsItems->patchEntities($prestigeLogsItems, $this->request->data());
@@ -124,6 +132,7 @@ class PrestigeLogsController extends AppController {
         $approvalList = $this->PrestigeLogs->PrestigeLogsItems->getApprovalList();
         $officerId = $this->request->session()->read('Auth.User.id');
         //debug($officerId);
+
         $this->set(compact('prestigeLogsItems', 'approvalList', 'officerId'));
     }
 

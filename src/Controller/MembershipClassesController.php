@@ -19,7 +19,7 @@ class MembershipClassesController extends AppController {
 
         
      public function index() {
-        $membershipClasses = $this->MembershipClasses->find('all')->contain(['Affiliates']);
+        $membershipClasses = $this->MembershipClasses->find('all')->contain(['Affiliates', 'Roles']);
         $this->set(compact('membershipClasses'));
     }
 
@@ -28,8 +28,8 @@ class MembershipClassesController extends AppController {
             throw new NotFoundException(__('Invalid MembershipClass'));
         }
 
-        $membershipClass = $this->MembershipClasses->find()->where(['MembershipClasses.id'=>$id])->contain(['Affiliates'])->first();
-        debug($membershipClass);
+        $membershipClass = $this->MembershipClasses->find()->where(['MembershipClasses.id'=>$id])->contain(['Affiliates', 'Roles'])->first();
+        //debug($membershipClass);
         $this->set(compact('membershipClass'));
     }
 
@@ -42,12 +42,14 @@ class MembershipClassesController extends AppController {
             }
             $this->Flash->error(__('Unable to add the membership class.'));
         }
-        $affiliates = $this->MembershipClasses->Affiliates->find('list')->toArray();
-        $this->set(compact('membershipClass', 'affiliates'));
+        $affiliateId = $this->MembershipClasses->Affiliates->getAffiliateIdByDomainId($this->request->session()->read('Auth.User.domain_id'));
+        $affiliates = $this->MembershipClasses->Affiliates->find('list')->where(['Affiliates.id'=>$affiliateId])->toArray();
+        $roles = $this->MembershipClasses->Roles->getRolesByAffiliate($affiliateId);
+        $this->set(compact('membershipClass', 'affiliates', 'roles'));
     }
 
     public function edit($id=null){
-        $membershipClass = $this->MembershipClasses->findById($id)->first();
+        $membershipClass = $this->MembershipClasses->findById($id)->contain(['Roles'])->first();
         if ($this->request->is(['post', 'put'])) {
             //Update the object with request data.
             $this->MembershipClasses->patchEntity($membershipClass, $this->request->data());
@@ -57,8 +59,10 @@ class MembershipClassesController extends AppController {
             }
             $this->Flash->error(__('Unable to update the membership class.'));
         }
-        $affiliates = $this->MembershipClasses->Affiliates->find('list')->toArray();
-        $this->set(compact('membershipClass', 'affiliates'));
+        $affiliateId = $this->MembershipClasses->Affiliates->getAffiliateIdByDomainId($this->request->session()->read('Auth.User.domain_id'));
+        $affiliates = $this->MembershipClasses->Affiliates->find('list')->where(['Affiliates.id'=>$affiliateId])->toArray();
+        $roles = $this->MembershipClasses->Roles->getRolesByAffiliate($affiliateId);
+        $this->set(compact('membershipClass', 'affiliates', 'roles'));
     }
 }
 ?>

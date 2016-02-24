@@ -116,9 +116,9 @@ class AppController extends Controller {
                     'scope' => ['Members.is_active' => true],
                 ],
             ],
-            'loginAction' => ['controller' => 'Members', 'action' => 'login'],
+            'loginAction' => ['plugin'=> null, 'controller' => 'Members', 'action' => 'login'],
             //'loginRedirect' => ['controller' => 'Pages', 'action' => 'home'],
-            'logoutRedirect' => ['controller' => 'Pages', 'action' => 'home'],
+            'logoutRedirect' => ['plugin' => null, 'controller' => 'Pages', 'action' => 'home'],
             'authError' => 'You are unable to access this area. Life isn\'t always fair.',
         ]);
         $this->loadComponent('Csrf');

@@ -7,9 +7,10 @@
 	        <?= $this->Form->input('level') ?>
 	        <?= $this->Form->input('name') ?>
 	        <?= $this->Form->input('affiliate_id') ?>
-	        <?= $this->Form->input('general') ?>
-	        <?= $this->Form->input('regional') ?>
-	        <?= $this->Form->input('national') ?>
+	        <?= $this->Form->input('roles._ids', ['type'=>'select', 'multiple'=>'checkbox', 'options' => $roles]) ?>
+	        <?= $this->Form->input('general_prestige') ?>
+	        <?= $this->Form->input('regional_prestige') ?>
+	        <?= $this->Form->input('national_prestige') ?>
 	   </fieldset>
 	<?= $this->Form->button(__('Submit')); ?>
 	<?= $this->Form->end() ?>

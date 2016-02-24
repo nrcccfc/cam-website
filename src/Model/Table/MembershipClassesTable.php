@@ -66,9 +66,12 @@ class MembershipClassesTable extends AppTable {
                     'message' => 'Name must be between 3 and 32 characters long.'
                 ]
             ])
-            ->notEmpty('general', 'General Prestige Requirement is required')
-            ->notEmpty('regional', 'Regional Prestige Requirement is required')
-            ->notEmpty('national', 'National Prestige Requirement is required')
+            //->notEmpty('general', 'General Prestige Requirement is required')
+            //->notEmpty('regional', 'Regional Prestige Requirement is required')
+            //->notEmpty('national', 'National Prestige Requirement is required')
+            ->allowEmpty('general_prestige')
+            ->allowEmpty('regional_prestige')
+            ->allowEmpty('national_prestige')
             ->allowEmpty('affiliate_id')
             ;
     }
@@ -106,6 +109,10 @@ class MembershipClassesTable extends AppTable {
         return $result;
     }
 */
+
+    public function calculateMembershipClass($general_prestige, $regional_prestige, $national_prestige){
+        return "MC 9001";
+    }
 
 }
 ?>

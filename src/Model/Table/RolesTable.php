@@ -128,9 +128,26 @@ class RolesTable extends AppTable {
         } else {
             return $this->find()->where(['Roles.id'=>$role_id])->contain(['DomainTypes.Affiliates'])->first()->domain_type->affiliate_id;
         }
-        
+    }
+
+    public function getRolesByAffiliate($affiliate_id){
+
+        $roles = $this->find('list')
+            ->contain(['DomainTypes'])
+            ->join([
+                'table' => 'domain_types',
+                'alias' => 'dt',
+                'type' => 'left',
+                'conditions' => 'Roles.domain_type_id = dt.id'
+                ])
+            ->where(['DomainTypes.affiliate_id'=>$affiliate_id])
+            ->toArray();
+
+        return $roles;
 
     }
+
+
 
     public function buildRules(RulesChecker $rules)
     {

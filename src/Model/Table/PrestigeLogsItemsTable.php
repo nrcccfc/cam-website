@@ -136,6 +136,8 @@ class PrestigeLogsItemsTable extends AppTable {
 
         $prestigeLogsItems = [];
         foreach($assignments as $assignment){
+            $items = [];
+            //debug($assignment);
             $items = $this->getPrestigeItemsToBeApprovedByAssignment($assignment['name'], $assignment['domain_id'], $assignment['role_id'], $assignment['venue_id']);
 
             foreach($items as $item){
@@ -163,18 +165,27 @@ class PrestigeLogsItemsTable extends AppTable {
 
         //Get all the domainIds this assignment can approve for
         $domainIds = $this->Domains->getChildrenIds($domain_id, true);
-        $conditions['PrestigeLogsItems.domain_id IN'] = $domainIds;
+
+        if(!empty($domainIds)){
+            $conditions['PrestigeLogsItems.domain_id IN'] = $domainIds;
+        }
         //debug($domainIds);
 
         //Get the PrestigeItems this Assignment can approve for.
         $prestigeItemIds = $this->PrestigeItems->PrestigeItemsRoles->getPrestigeItemsIds($role_id);
-        $conditions['PrestigeLogsItems.prestige_item_id IN'] = $prestigeItemIds;
+
+        if(!empty($prestigeItemIds)){
+            $conditions['PrestigeLogsItems.prestige_item_id IN'] = $prestigeItemIds;
+        }
+        
         //debug($prestigeItemIds);
 
         //Get the Venue this Assignment can approve for if the role is venue specific
         if (!is_null($venue_id)){
             $conditions['PrestigeLogsItems.venue_id'] = $venue_id;
         }
+
+        //debug($conditions);
 
         //Get all the prestige items that are unapproved.
         $prestigeItems = $this->find()
