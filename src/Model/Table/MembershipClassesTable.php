@@ -119,6 +119,9 @@ class MembershipClassesTable extends AppTable {
         $regional_prestige = $prestigeTotal['Total'][1] + $prestigeTotal['Total'][2];
         $national_prestige = $prestigeTotal['Total'][2];
 
+        //Get the membershipClasses that have already been added to the Prestige Log
+        $currentMembershipClasses = $prestigeLog->prestige_logs_membership_classes;
+
 
         //Get all the membershipClasses for the affiliate
         $membershipClasses = $this->find('all')->where(['MembershipClasses.affiliate_id'=>$affiliateId])->order('MembershipClasses.level')->toArray();
@@ -126,10 +129,28 @@ class MembershipClassesTable extends AppTable {
         for($i=0; $i<count($membershipClasses); $i++){
             $j = $i + 1;
             if($general_prestige >= $membershipClasses[$i]['general_prestige'] && $regional_prestige >= $membershipClasses[$i]['regional_prestige'] && $national_prestige >= $membershipClasses[$i]['national_prestige']){
+
+                $approved = False;
+                if(empty($currentMembershipClasses[$i] )){
+                    $prestigeLogMembershipClass = ['prestige_log_id'=>$prestigeLog['id'], 'membership_class_id'=>$membershipClasses[$i]['id']];
+                    //debug($this->PrestigeLogsMembershipClasses);
+                    $newPrestigeLogsMembershipClass = $this->PrestigeLogsMembershipClasses->newEntity($prestigeLogMembershipClass);
+                    //debug($newPrestigeLogsMembershipClass);
+                    $this->PrestigeLogsMembershipClasses->save($newPrestigeLogsMembershipClass);
+                    //debug('Need to added '.$i);
+
+                } else {
+                    $approved = True;
+                }
+
                 $results['currentLevel'] = $membershipClasses[$i]['level'];
                 $results['currentReqs'][0] = $membershipClasses[$i]['general_prestige'];
                 $results['currentReqs'][1] = $membershipClasses[$i]['regional_prestige'];
                 $results['currentReqs'][2] = $membershipClasses[$i]['national_prestige'];
+
+                if ($approved){
+                    $results['approvedLevel'] = $membershipClasses[$i]['level'];                    
+                }
 
                 if ($i < count($membershipClasses)) {
                     $results['nextLevel'] = $membershipClasses[$j]['level'];

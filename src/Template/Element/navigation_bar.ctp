@@ -36,10 +36,12 @@
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Misc <span class="caret"></span></a>
 			        <ul class="dropdown-menu" role="menu">
 			            <li class="dropdown-header">Internal</li>
-			            <li><?= $this->Html->link('Games', ['controller'=>'Games', 'action'=>'index']) ?></li>
+			            <li><?= $this->Html->link('Announcements', ['controller'=>'Announcements', 'action'=>'index']) ?></li>
 			            <li><?= $this->Html->link('Affiliates', ['controller'=>'Affiliates', 'action'=>'index']) ?></li>
-			            <li><?= $this->Html->link('DomainTypes', ['controller'=>'DomainTypes', 'action'=>'index']) ?></li>
+			            <li><?= $this->Html->link('Books', ['controller'=>'Books', 'action'=>'index']) ?></li>
 			            <li><?= $this->Html->link('Continuities', ['controller'=>'Continuities', 'action'=>'index']) ?></li>
+			            <li><?= $this->Html->link('Games', ['controller'=>'Games', 'action'=>'index']) ?></li>
+			            <li><?= $this->Html->link('DomainTypes', ['controller'=>'DomainTypes', 'action'=>'index']) ?></li>
 			            <li><?= $this->Html->link('Venues', ['controller'=>'Venues', 'action'=>'index']) ?></li>
 			            <li class="divider"></li>
 			            <li class="dropdown-header">Security</li>
