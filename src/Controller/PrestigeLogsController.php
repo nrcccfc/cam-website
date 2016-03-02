@@ -75,7 +75,7 @@ class PrestigeLogsController extends AppController {
             ->contain(['Members.Domains.DomainTypes', 
                     'PrestigeLogsMembershipClasses.MembershipClasses', 
                     'PrestigeLogsItems'=> function ($q) {
-                        return $q->order('prestigeLogsItems.locked', 'desc')
+                        return $q->order('PrestigeLogsItems.locked', 'desc')
                             ->contain(['Domains', 
                                     'PrestigeItems.PrestigeCategories'=>function($q){return $q->select(['id', 'monthly_limit', 'name']);}, 
                                     'Officers',
