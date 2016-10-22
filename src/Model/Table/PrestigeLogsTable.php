@@ -167,5 +167,82 @@ class PrestigeLogsTable extends AppTable {
         return $prestigeTotal;
     }
 
+
+    public function getMembershipClassesToBeApproved($assignments) {
+        //debug($assignments);
+
+        $membershipClasses = [];
+        foreach($assignments as $assignment){
+            $items = [];
+            //debug($assignment);
+            $items = $this->getMembershipClassesToBeApprovedByAssignment($assignment['name'], $assignment['domain_id'], $assignment['role_id'], $assignment['venue_id']);
+
+            foreach($items as $item){
+                if(isset($membershipClasses[$item->id])){
+                    //Append AssignmentName
+                    array_push($membershipClasses[$item->id]->assignment_name,  $item->assignment_name[0]);
+                }else{
+                    //New Item
+                    $membershipClasses[$item->id] = $item;
+
+                    //array_push($prestigeLogsItems, $item);
+                }
+                
+            }
+            //$prestigeLogsItems = array_merge($prestigeLogItems, $items);
+            
+        }
+        //debug($prestigeLogItems);
+        //debug($prestigeLogsItems);
+        return $membershipClasses;
+    }
+
+
+    public function getMembershipClassesToBeApprovedByAssignment($assignment_name, $domain_id, $role_id){
+        $conditions = ['status'=>0]; //Unapproved
+
+        //Get all the domainIds this assignment can approve for
+        $domainIds = $this->Members->Domains->getChildrenIds($domain_id, true);
+        $conditions['PrestigeLogsItems.domain_id IN'] = $domainIds;
+        debug($domainIds);
+
+
+
+
+        //Get the PrestigeItems this Assignment can approve for.
+        $membershipClassApprovalIds = $this->PrestigeLogsMembershipClasses->MembershipClasses->MembershipClassesRoles->getMembershipClassesIds($role_id);
+        //$conditions['PrestigeLogsItems.prestige_item_id IN'] = $prestigeItemIds;
+        debug($membershipClassApprovalIds);
+
+/*
+
+        //Get all the prestige items that are unapproved.
+        $prestigeItems = $this->find()
+            //->group(['PrestigeLogsItems.id', 'Games.id'])
+            ->contain(['PrestigeItems', 'Domains', 'Venues.Games', 'PrestigeLogs.Members'=>function($q){return $q->select(['id', 'first_name', 'last_name', 'username']); }]) //We only load the id/name of the member for security reasons.
+            ->where($conditions)
+            //->toArray()
+            ;
+        //debug($prestigeItems);
+
+        //debug($conditions);
+        //debug($items);
+*/
+        $results = [];
+/*
+        foreach($prestigeItems as $prestigeItem) {
+            $isSecondary = 1;
+            if ($prestigeItem['domain_id'] === $domain_id){
+                $isSecondary = 0;
+            }
+            $prestigeItem['assignment_name'] = [[$role_id=>$assignment_name]];
+            $prestigeItem['primary'] = !$isSecondary;
+            array_push($results, $prestigeItem);
+        }
+        //debug($results);
+*/
+        return $results;
+    }
+
 }
 ?>

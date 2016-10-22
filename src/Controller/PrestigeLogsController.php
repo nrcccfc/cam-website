@@ -105,6 +105,9 @@ class PrestigeLogsController extends AppController {
 
         $prestigeLogsItems = $this->PrestigeLogs->PrestigeLogsItems->getPrestigeItemsToBeApproved($assignments);
 
+        $prestigeLogsMembershipClasses = $this->PrestigeLogs->getMembershipClassesToBeApproved($assignments);
+        debug($prestigeLogsMembershipClasses);
+
         if ($this->request->is(['post', 'put'])) {
             //Update the object with request data.
             $patched = $this->PrestigeLogs->PrestigeLogsItems->patchEntities($prestigeLogsItems, $this->request->data());

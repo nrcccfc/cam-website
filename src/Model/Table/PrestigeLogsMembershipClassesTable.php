@@ -157,49 +157,7 @@ class PrestigeLogsMembershipClassesTable extends AppTable {
         return $prestigeLogsItems;
     }
 
-    public function getPrestigeItemsToBeApprovedByAssignment($assignment_name, $domain_id, $role_id, $venue_id=null){
-        $conditions = ['status'=>0]; //Unapproved
 
-        //Get all the domainIds this assignment can approve for
-        $domainIds = $this->Domains->getChildrenIds($domain_id, true);
-        $conditions['PrestigeLogsItems.domain_id IN'] = $domainIds;
-        //debug($domainIds);
-
-        //Get the PrestigeItems this Assignment can approve for.
-        $prestigeItemIds = $this->PrestigeItems->PrestigeItemsRoles->getPrestigeItemsIds($role_id);
-        $conditions['PrestigeLogsItems.prestige_item_id IN'] = $prestigeItemIds;
-        //debug($prestigeItemIds);
-
-        //Get the Venue this Assignment can approve for if the role is venue specific
-        if (!is_null($venue_id)){
-            $conditions['PrestigeLogsItems.venue_id'] = $venue_id;
-        }
-
-        //Get all the prestige items that are unapproved.
-        $prestigeItems = $this->find()
-            //->group(['PrestigeLogsItems.id', 'Games.id'])
-            ->contain(['PrestigeItems', 'Domains', 'Venues.Games', 'PrestigeLogs.Members'=>function($q){return $q->select(['id', 'first_name', 'last_name', 'username']); }]) //We only load the id/name of the member for security reasons.
-            ->where($conditions)
-            //->toArray()
-            ;
-        //debug($prestigeItems);
-
-        //debug($conditions);
-        //debug($items);
-
-        $results = [];
-        foreach($prestigeItems as $prestigeItem) {
-            $isSecondary = 1;
-            if ($prestigeItem['domain_id'] === $domain_id){
-                $isSecondary = 0;
-            }
-            $prestigeItem['assignment_name'] = [[$role_id=>$assignment_name]];
-            $prestigeItem['primary'] = !$isSecondary;
-            array_push($results, $prestigeItem);
-        }
-        //debug($results);
-        return $results;
-    }
 
     public function getApprovalList(){
         return ['1'=>'Deny', '2'=>'Approve'];

@@ -1,0 +1,49 @@
+<?php
+// src/Model/Table/MembershipClassesRolesTable.php
+namespace App\Model\Table;
+
+use Cake\ORM\Table;
+use Cake\Validation\Validator;
+
+class MembershipClassesRolesTable extends AppTable {
+
+	public function initialize(array $config){
+        parent::initialize($config);
+
+        //$this->displayField('name');
+
+        $this->belongsTo('MembershipClasses');
+        $this->belongsTo('Roles');
+
+
+	}  
+
+    public function validationDefault(Validator $validator) {
+
+        return $validator
+            ->notEmpty('role_id', 'A Role is required')
+            ->notEmpty('membership_class_id', 'A Membership Class is required')
+            ;
+    }
+
+    public function getMembershipClassIds($roleId){
+        $results = [];
+        if(!empty($roleId)){
+            $items = $this->find()->where(['role_id'=>$roleId])->select(['prestige_item_id'])->toArray();
+            foreach($items as $item){
+                array_push($results, $item['prestige_item_id']);
+            }
+        }
+        return $results;
+    }
+
+
+
+    
+}
+?>
+
+
+
+
+

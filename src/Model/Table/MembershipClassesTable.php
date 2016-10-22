@@ -29,7 +29,7 @@ class MembershipClassesTable extends AppTable {
             'dependant' => true,
             'cascadeCallbacks' => true,
             'foreignKey' => 'membership_class_id',
-        ]);
+        ]);      
 /*
         $this->hasMany('Children', [
             'className' => 'Games',
